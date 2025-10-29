@@ -1,18 +1,80 @@
-# React + Vite
+## React + Tailwind CSS + Vite Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern React application built using **Vite**, styled with **Tailwind CSS**, and organized for scalability.  
+It includes a reusable API client setup (using Axios) and basic routing structure with React Router.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+**React** — Frontend UI library  
+**Vite** — Lightning-fast build tool and dev server  
+**Tailwind CSS** — Utility-first CSS framework  
+**Axios** — For API calls  
+**React Router** — For navigation and routing  
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+##Getting Started
 
-## Expanding the ESLint configuration
+### 1️. Clone the Repository
+```bash
+git clone git@github.com:Aditya-1998k/Task-Tracker-UI.git
+cd Task-Tracker-UI
+```
+### 2. Install Dependencies
+`npm install`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. Run the Development Server
+`npm run dev`
+
+---
+
+## Project Structure
+```
+├── public/
+├── src/
+│   ├── assets/
+│   ├── api/
+│   │   └── apiClient.js
+│   ├── components/
+│   │   └── Login.jsx
+|   |   └── Signup.jsx
+|   |   └── Dashboard.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── index.css
+├── package.json
+├── index.html
+├── package-lock.json
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## Script
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start the local development server   |
+| `npm run build`   | Build the production bundle          |
+| `npm run preview` | Preview the production build locally |
+
+
+---
+
+## Recommended VS Code Extensions
+
+**ES7+ React/Redux/React-Native snippets**  
+**Tailwind CSS IntelliSense**  
+**Prettier - Code formatter**  
+**Error Lens** (for inline error visibility)
+
+---
+
+## 🧑‍💻 Author
+
+**Aditya Gupta**  
+💼 [LinkedIn](https://www.linkedin.com/in/aditya-1998k)  
+📧 aditya98gupta@gmail.com  
+
