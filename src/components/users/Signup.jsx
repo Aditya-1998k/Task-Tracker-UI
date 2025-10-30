@@ -1,5 +1,4 @@
-import React from "react";
-import apiClient from "../api/axios"
+import apiClient from "../../api/axios"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false)
 
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     setError("")
     setLoading(true)
@@ -47,7 +46,7 @@ const Login = () => {
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-        <form onSubmit={handleLogin} className="space-y-6">
+        <form onSubmit={handleSignup} className="space-y-6">
             <div>
               <label htmlFor="username" className="block text-sm/6 font-medium text-black-100">
                 Username
