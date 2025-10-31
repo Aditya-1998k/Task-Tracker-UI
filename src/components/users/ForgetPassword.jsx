@@ -21,12 +21,12 @@ const ForgetPassword = () => {
           url: "/users/forget_password",
           data: {email}
       });
-      console.log("Password changed Successfully.", response.data);
+      console.log("Password sends Successfully.", response.data);
 
       localStorage.setItem("token", response.data.token);
-      navigate("/")
+      navigate("/change_password")
     } catch (err) {
-      setError(err.response?.data?.message || "Password Change Failed");
+      setError(err.response?.data?.message || "New Password creation Failed");
     } finally {
       setLoading(false)
     }
@@ -42,7 +42,7 @@ const ForgetPassword = () => {
           className="mx-auto h-10 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-black">
-          Sign in to your account
+          Get Account Password on Email
         </h2>
       </div>
 

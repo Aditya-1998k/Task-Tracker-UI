@@ -1,38 +1,36 @@
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import apiClient from "../../api/axios"
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
-const Signup = () => {
+
+const ChangePassword = () =>{
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [username, setUserName] = useState("")
-  const [role, setRole] = useState("")
+  const [oldPassword, setOldPassword] = useState("")
+  const [newPassword, setNewpassword] = useState("")
   const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState("")
+  const navigate = useNavigate()
 
-  const navigate = useNavigate();
-
-  const handleSignup = async (e) => {
+  const handleChangePassword = async(e) =>{
     e.preventDefault();
-    setError("")
-    setLoading(true)
+    setError("");
+    setLoading(true);
 
     try{
-      const response = await apiClient({
-          method: "POST",
-          url: "/users/signup",
-          data: {email, password, role, username}
-      });
-      console.log("Registered Successfully.", response.data);
-      return navigate("/")
-    } catch (err) {
-      setError(err.response.data.error || "User Registration Failed.");
-    } finally {
+      const response = await apiClient.post(
+        "/users/change_password",
+        { email, oldPassword, newPassword }
+      );
+      console.log("Password changed Successfully.", response.data);
+      navigate("/")
+    }catch(err){
+      console.log(err)
+      setError(err.response?.data?.message || "Password Change Failed");
+    }finally{
       setLoading(false)
     }
   }
-
 
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -43,27 +41,13 @@ const Signup = () => {
           className="mx-auto h-10 w-auto"
         />
         <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-black">
-          Sign in to your account
+          Change your Account Password
         </h2>
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 
-        <form onSubmit={handleSignup} className="space-y-6">
-            <div>
-              <label htmlFor="username" className="block text-sm/6 font-medium text-black-100">
-                Username
-              </label>
-              <div className="mt-2">
-                <input
-                  id="username" type="username" name="username" value={username}
-                  onChange={(e) => setUserName(e.target.value)}
-                  required autoComplete="username"
-                  className="block w-full rounded-md bg-black/5 px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-black/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-                />
-              </div>
-            </div>
-
+        <form onSubmit={handleChangePassword} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm/6 font-medium text-black-100">
                 Email address
@@ -79,28 +63,28 @@ const Signup = () => {
             </div>
 
             <div>
-              <label htmlFor="role" className="block text-sm/6 font-medium text-black-100">
-                Role
+              <label htmlFor="oldPassword" className="block text-sm/6 font-medium text-black-100">
+                Old Password
               </label>
               <div className="mt-2">
                 <input
-                  id="role" type="role" name="role" value={role}
-                  onChange={(e) => setRole(e.target.value)}
-                  required autoComplete="role"
+                  id="oldPassword" type="oldPassword" name="oldPassword" value={oldPassword}
+                  onChange={(e) => setOldPassword(e.target.value)}
+                  required autoComplete="oldPassword"
                   className="block w-full rounded-md bg-black/5 px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-black/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div>
-                <label htmlFor="password" className="block text-sm/6 font-medium text-black-100">
-                  Password
-                </label>
+              <label htmlFor="newPassword" className="block text-sm/6 font-medium text-black-100">
+                New Password
+              </label>
               <div className="mt-2">
                 <input
-                  id="password" type="password" name="password" value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required autoComplete="current-password"
+                  id="newPassword" type="newPassword" name="newPassword" value={newPassword}
+                  onChange={(e) => setNewpassword(e.target.value)}
+                  required autoComplete="newPassword"
                   className="block w-full rounded-md bg-black/5 px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 outline-black/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
                 />
               </div>
@@ -111,7 +95,7 @@ const Signup = () => {
             )}
 
             {loading && (
-              <p className="text-gray-500 text-sm text-center mt-2">  Registering User... </p>
+              <p className="text-gray-500 text-sm text-center mt-2">  Logging in... </p>
             )}
 
             <div>
@@ -119,21 +103,21 @@ const Signup = () => {
                 type="submit" disabled={loading} // Prevent Double click
                 className="flex w-full justify-center rounded-md bg-green-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-black-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black-500 disabled:opacity-50"
               >
-                {loading ? "Please wait..." : "Registering User"}
+                {loading ? "Please wait..." : "Change Password"}
               </button>
             </div>
           </form>
 
         <p className="mt-10 text-center text-sm/6 text-gray-400">
-          Already a member?
+          Want to Login? 
           <Link to="/" className="font-semibold text-indigo-400 hover:text-green-300">
-            Please Login.
+            Login
           </Link>
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default ChangePassword
 
