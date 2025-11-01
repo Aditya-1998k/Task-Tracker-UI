@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useState } from "react";
+import AddTaskModal from "./Tasks/AddTaskModel";
 
 function Navbar() {
+  const [showModal, setShowModal] = useState(false);
 
   const handleLogOut = () =>{
     localStorage.removeItem("token")
@@ -18,20 +21,28 @@ function Navbar() {
               </div>
               <div className="sm:ml-6 sm:block">
                 <div className="flex space-x-4">
-                  <Link to="/dashboard" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white" > Dashboard </Link>
-                  <Link to="/tasks" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">Tasks</Link>
-                  <Link to="/mytask" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">For Me</Link>
-                  <Link to="/users" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">Users</Link>
+                  <Link to="/dashboard" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white" > Overview </Link>
+                  <Link to="/tasks" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">Task Board</Link>
+                  <Link to="/mytask" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">My Tasks</Link>
+                  <Link to="/users" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">Workspace</Link>
                 </div>
               </div>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white">Task +</a>
-              <a onClick={handleLogOut} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-red-600 hover:text-white">Logout</a>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-10 sm:pr-0">
+              <button
+                onClick={() => setShowModal(true)}
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/50 hover:text-white"
+              >
+                Task +
+              </button>
+              <a onClick={handleLogOut} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-red-600 hover:text-white">Sign Out</a>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* AddTaskModal here */}
+      <AddTaskModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </>
 
   )

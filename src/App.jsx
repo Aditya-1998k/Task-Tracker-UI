@@ -9,6 +9,7 @@ import GetTask from "./components/Tasks/getTask";
 import ForMe from "./components/Tasks/forMe";
 import Users from "./components/users/users";
 import ProtectedRoute from "./components/ProtectedRoute"
+import AddTaskModal from "./components/Tasks/AddTaskModel";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/tasks" element={<GetTask />} />
           <Route path="/mytask" element={<ForMe />} />
+          <Route path="/addtask" element={<AddTaskModal/>}/>
         </Route> 
       </Routes>
     </BrowserRouter>
