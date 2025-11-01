@@ -69,31 +69,30 @@ cd Task-Tracker-UI
 #### 1. Login Page
   <table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/94c871de-09cb-448b-b081-740671c9806b" border="2"></td></tr></table>
 
-#### 2. Signup Page
+#### 2. Dashboard(Overview Page)
+<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/76c47647-06d8-436f-9836-8f5521ce4603" border="2"></td></tr></table>
+
+#### 3. Signup Page
   <table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/45cdfecc-cd08-4b0e-a56f-0f90d231f531" border="2"></td></tr></table>
 
-#### 3. Forget Password Page
+#### 4. Task Overview
+<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/3319537f-d13e-4711-8039-3763de1cacc1" border="2"></td></tr></table>
+
+#### 5. My Task Overview
+<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/e35ad635-a97f-4e46-9f28-b741140af3dc" border="2"></td></tr></table>
+
+#### 6. Workspace
+<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/d6038fa1-1f43-41a6-8030-52529ac1c52e" border="2"></td></tr></table>
+
+#### 7. Add Task (Model Window)
+<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/1758101f-1bed-40b4-ae34-2b405816223d" border="2"></td></tr></table>
+
+#### 8. Forget Password Page
   <table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/bdfe37f7-6df5-491c-a163-92eb92d89c88" border="2"></td></tr></table>
 
   <table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/d6747a57-9145-4bbf-9388-acfc53bba57f" border="2"></td></tr></table>
 
   <table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/87054ddd-49bb-4c5c-a6e5-e3164122043f" border="2"></td></tr></table>
-
-#### 4. Dashboard(Overview Page)
-<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/76c47647-06d8-436f-9836-8f5521ce4603" border="2"></td></tr></table>
-
-#### 5. Task Overview
-<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/3319537f-d13e-4711-8039-3763de1cacc1" border="2"></td></tr></table>
-
-#### 6. My Task Overview
-<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/e35ad635-a97f-4e46-9f28-b741140af3dc" border="2"></td></tr></table>
-
-#### 7. Workspace
-<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/d6038fa1-1f43-41a6-8030-52529ac1c52e" border="2"></td></tr></table>
-
-#### 8. Add Task (Model Window)
-<table><tr><td><img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/1758101f-1bed-40b4-ae34-2b405816223d" border="2"></td></tr></table>
-
 
 ---
 
