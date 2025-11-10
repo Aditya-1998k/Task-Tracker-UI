@@ -103,7 +103,7 @@ cd Task-Tracker-UI
 **Prettier - Code formatter**  
 **Error Lens** (for inline error visibility)
 
----
+----
 
 ## 🧑‍💻 Author
 
